@@ -9,4 +9,5 @@ class Feedback extends Model
     protected $fillable = [
         'name', 'email', 'msg',
     ];
+    protected $table = 'feedbacks';
 }

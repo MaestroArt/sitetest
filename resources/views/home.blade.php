@@ -1,21 +1,25 @@
 @extends('layouts.app')
 
-<!--<link rel="stylesheet" type="text/css" href="//s1.gismeteo.ua/static/compressed/origin_c9e48b32.css">-->
-
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">The weather in Zaporizhzhia</div>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">The weather in Zaporizhzhia</div>
 
-                <div class="panel-body">
-                        Temperature: {{$temperature or 'Not found'}} &deg;C<br>
-                        Wind: {{$wind or 'Not found'}} м/с<br>
-                        Precipitation {!!$osadki or 'Not found'!!}<br>
-                        Pressure {{$pressure or 'Not found'}} мм рт. ст.<br>
-                        Humidity {{$humidity or 'Not found'}} влажн.<br>
-                        Update time is {{$upd or 'Not found'}}
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                        Temperature: {{$temperature}} &deg;C<br>
+                        Wind: {{$wind}} м/с<br>
+                        Precipitation {!!$osadki!!}<br>
+                        Pressure {{$pressure}} мм рт. ст.<br>
+                        Humidity {{$humidity}} влажн.<br>
+                        Update time is {{$upd}}
                 </div>
             </div>
         </div>

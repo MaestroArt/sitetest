@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Feedback</div>
                 <div class="panel-body">
-                    <span style='background-color:LightGreen'>{{$thanks or ""}}</span>
+                    <span style='background-color:LightGreen'>{{ isset($thanks) ? $thanks : '' }}</span>
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/feedback') }}">
                         {{ csrf_field() }}
 
