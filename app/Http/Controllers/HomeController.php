@@ -114,10 +114,10 @@ class HomeController extends Controller
     {
         $startTagpos=stripos($str, "<$tag",$posStart);
         $endTagpos=stripos($str, "</$tag",$posEnd);
-        if(false===$startTagpos||false===$endTagpos){
+        if(false===$startTagpos||false===$endTagpos) {
             return $endTagpos;
         }
-        if($endTagpos<$startTagpos){
+        if($endTagpos<$startTagpos) {
             return $endTagpos;
         }
         return $this->findEndTag($str,$tag,$startTagpos+1,$endTagpos+1);
